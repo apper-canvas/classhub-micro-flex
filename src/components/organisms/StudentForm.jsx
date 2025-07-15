@@ -86,12 +86,11 @@ if (!formData.email.trim()) {
       newErrors.email = "Email is required";
     } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
       newErrors.email = "Email is invalid";
-    }
+}
 
-    if (formData.phoneNumber && !/^\+?[\d\s\-\(\)]+$/.test(formData.phoneNumber)) {
+    if (formData.phoneNumber && !/^\+?[\d\s\-()]+$/.test(formData.phoneNumber)) {
       newErrors.phoneNumber = "Phone number is invalid";
     }
-
     if (!formData.enrollmentDate) {
       newErrors.enrollmentDate = "Enrollment date is required";
     }
