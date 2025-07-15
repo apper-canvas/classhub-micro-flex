@@ -19,16 +19,20 @@ const Dashboard = () => {
   const [upcomingAssignments, setUpcomingAssignments] = useState([]);
   const [todayAttendance, setTodayAttendance] = useState([]);
   const [loading, setLoading] = useState(true);
-
+  const [currentDate, setCurrentDate] = useState(new Date());
+  const [allAssignments, setAllAssignments] = useState([]);
   const loadDashboardData = async () => {
     try {
       setLoading(true);
       
-      const [students, assignments, attendance] = await Promise.all([
+const [students, assignments, attendance] = await Promise.all([
         studentService.getAll(),
         assignmentService.getAll(),
         attendanceService.getAll()
       ]);
+
+      // Store all assignments for calendar
+      setAllAssignments(assignments);
 
       // Get upcoming assignments (next 7 days)
       const today = new Date();
@@ -40,7 +44,6 @@ const Dashboard = () => {
         })
         .sort((a, b) => new Date(a.dueDate) - new Date(b.dueDate))
         .slice(0, 5);
-
       // Get today's attendance
       const todayStr = format(today, "yyyy-MM-dd");
       const todayRecords = attendance.filter(a => 
@@ -79,7 +82,52 @@ const Dashboard = () => {
 
   useEffect(() => {
     loadDashboardData();
-  }, []);
+}, []);
+
+  // Calendar helper functions
+  const getDaysInMonth = (date) => {
+    const year = date.getFullYear();
+    const month = date.getMonth();
+    const firstDay = new Date(year, month, 1);
+    const lastDay = new Date(year, month + 1, 0);
+    const daysInMonth = lastDay.getDate();
+    const startingDayOfWeek = firstDay.getDay();
+    
+    const days = [];
+    
+    // Add empty cells for days before the first day of the month
+    for (let i = 0; i < startingDayOfWeek; i++) {
+      days.push(null);
+    }
+    
+    // Add days of the month
+    for (let day = 1; day <= daysInMonth; day++) {
+      days.push(day);
+    }
+    
+    return days;
+  };
+
+  const getAssignmentsForDate = (day) => {
+    if (!day) return [];
+    
+    const year = currentDate.getFullYear();
+    const month = currentDate.getMonth();
+    const dateString = format(new Date(year, month, day), "yyyy-MM-dd");
+    
+    return allAssignments.filter(assignment => {
+      const assignmentDate = format(new Date(assignment.dueDate), "yyyy-MM-dd");
+      return assignmentDate === dateString;
+    });
+  };
+
+  const navigateMonth = (direction) => {
+    setCurrentDate(prev => {
+      const newDate = new Date(prev);
+      newDate.setMonth(prev.getMonth() + direction);
+      return newDate;
+    });
+  };
 
   if (loading) {
     return (
@@ -103,8 +151,8 @@ return (
         {/* Stats Overview */}
         <DashboardStats />
 
-        {/* Main Content Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+{/* Main Content Grid */}
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
           {/* Recent Activities */}
           <Card className="p-6">
             <div className="flex items-center justify-between mb-4">
@@ -168,6 +216,125 @@ return (
                   </div>
                 </motion.div>
               ))}
+            </div>
+</Card>
+
+          {/* Calendar Widget */}
+          <Card className="p-6">
+            <div className="flex items-center justify-between mb-4">
+              <h3 className="text-lg font-semibold text-gray-900">Assignment Calendar</h3>
+              <div className="flex items-center space-x-2">
+                <Button 
+                  variant="ghost" 
+                  size="sm" 
+                  onClick={() => navigateMonth(-1)}
+                  className="p-2"
+                >
+                  <ApperIcon name="ChevronLeft" size={16} />
+                </Button>
+                <span className="text-sm font-medium text-gray-700 min-w-[120px] text-center">
+                  {format(currentDate, "MMMM yyyy")}
+                </span>
+                <Button 
+                  variant="ghost" 
+                  size="sm" 
+                  onClick={() => navigateMonth(1)}
+                  className="p-2"
+                >
+                  <ApperIcon name="ChevronRight" size={16} />
+                </Button>
+              </div>
+            </div>
+            
+            <div className="space-y-3">
+              {/* Calendar Header */}
+              <div className="grid grid-cols-7 gap-1 mb-2">
+                {['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'].map(day => (
+                  <div key={day} className="text-xs font-medium text-gray-500 text-center p-2">
+                    {day}
+                  </div>
+                ))}
+              </div>
+              
+              {/* Calendar Grid */}
+              <div className="grid grid-cols-7 gap-1">
+                {getDaysInMonth(currentDate).map((day, index) => {
+                  const assignments = getAssignmentsForDate(day);
+                  const isToday = day && 
+                    new Date().getDate() === day && 
+                    new Date().getMonth() === currentDate.getMonth() && 
+                    new Date().getFullYear() === currentDate.getFullYear();
+                  
+                  return (
+                    <motion.div
+                      key={index}
+                      initial={{ opacity: 0, scale: 0.95 }}
+                      animate={{ opacity: 1, scale: 1 }}
+                      transition={{ delay: index * 0.02 }}
+                      className={`
+                        aspect-square p-1 text-center rounded-lg relative
+                        ${day ? 'hover:bg-gray-50 cursor-pointer' : ''}
+                        ${isToday ? 'bg-primary bg-opacity-10 border border-primary' : ''}
+                      `}
+                    >
+                      {day && (
+                        <>
+                          <div className={`
+                            text-sm font-medium
+                            ${isToday ? 'text-primary' : 'text-gray-900'}
+                          `}>
+                            {day}
+                          </div>
+                          {assignments.length > 0 && (
+                            <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 flex space-x-1">
+                              {assignments.slice(0, 3).map((assignment, i) => (
+                                <div
+                                  key={assignment.Id}
+                                  className={`
+                                    w-1.5 h-1.5 rounded-full
+                                    ${assignment.category === 'test' ? 'bg-error' : ''}
+                                    ${assignment.category === 'quiz' ? 'bg-warning' : ''}
+                                    ${assignment.category === 'project' ? 'bg-secondary' : ''}
+                                    ${assignment.category === 'homework' ? 'bg-primary' : ''}
+                                    ${assignment.category === 'participation' ? 'bg-success' : ''}
+                                    ${assignment.category === 'extra-credit' ? 'bg-accent' : ''}
+                                  `}
+                                  title={assignment.title}
+                                />
+                              ))}
+                              {assignments.length > 3 && (
+                                <div className="w-1.5 h-1.5 rounded-full bg-gray-400" title={`+${assignments.length - 3} more`} />
+                              )}
+                            </div>
+                          )}
+                        </>
+                      )}
+                    </motion.div>
+                  );
+                })}
+              </div>
+              
+              {/* Legend */}
+              <div className="mt-4 pt-3 border-t border-gray-200">
+                <div className="flex flex-wrap gap-2 text-xs">
+                  <div className="flex items-center space-x-1">
+                    <div className="w-2 h-2 rounded-full bg-error"></div>
+                    <span className="text-gray-600">Test</span>
+                  </div>
+                  <div className="flex items-center space-x-1">
+                    <div className="w-2 h-2 rounded-full bg-warning"></div>
+                    <span className="text-gray-600">Quiz</span>
+                  </div>
+                  <div className="flex items-center space-x-1">
+                    <div className="w-2 h-2 rounded-full bg-secondary"></div>
+                    <span className="text-gray-600">Project</span>
+                  </div>
+                  <div className="flex items-center space-x-1">
+                    <div className="w-2 h-2 rounded-full bg-primary"></div>
+                    <span className="text-gray-600">Homework</span>
+                  </div>
+                </div>
+              </div>
             </div>
           </Card>
         </div>
