@@ -9,11 +9,12 @@ import Modal from "@/components/atoms/Modal";
 import { studentService } from "@/services/api/studentService";
 
 const StudentForm = ({ student, isOpen, onClose, onSave }) => {
-  const [formData, setFormData] = useState({
+const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
     grade: "",
     email: "",
+    phoneNumber: "",
     enrollmentDate: "",
     status: "active"
   });
@@ -43,20 +44,22 @@ const StudentForm = ({ student, isOpen, onClose, onSave }) => {
 
   useEffect(() => {
     if (student) {
-      setFormData({
+setFormData({
         firstName: student.firstName || "",
         lastName: student.lastName || "",
         grade: student.grade || "",
         email: student.email || "",
+        phoneNumber: student.phoneNumber || "",
         enrollmentDate: student.enrollmentDate ? student.enrollmentDate.split("T")[0] : "",
         status: student.status || "active"
       });
     } else {
-      setFormData({
+setFormData({
         firstName: "",
         lastName: "",
         grade: "",
         email: "",
+        phoneNumber: "",
         enrollmentDate: new Date().toISOString().split("T")[0],
         status: "active"
       });
@@ -79,10 +82,14 @@ const StudentForm = ({ student, isOpen, onClose, onSave }) => {
       newErrors.grade = "Grade is required";
     }
 
-    if (!formData.email.trim()) {
+if (!formData.email.trim()) {
       newErrors.email = "Email is required";
     } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
       newErrors.email = "Email is invalid";
+    }
+
+    if (formData.phoneNumber && !/^\+?[\d\s\-\(\)]+$/.test(formData.phoneNumber)) {
+      newErrors.phoneNumber = "Phone number is invalid";
     }
 
     if (!formData.enrollmentDate) {
@@ -199,6 +206,16 @@ const StudentForm = ({ student, isOpen, onClose, onSave }) => {
           onChange={handleChange}
           error={errors.email}
           placeholder="Enter email address"
+/>
+
+        <Input
+          label="Phone Number"
+          name="phoneNumber"
+          type="tel"
+          value={formData.phoneNumber}
+          onChange={handleChange}
+          error={errors.phoneNumber}
+          placeholder="Enter phone number"
         />
 
         <Input
