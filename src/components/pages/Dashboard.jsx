@@ -120,9 +120,9 @@ const Dashboard = () => {
               </Button>
             </div>
             <div className="space-y-4">
-              {recentActivities.map((activity, index) => (
+{recentActivities.map((activity, index) => (
                 <motion.div
-                  key={activity.id}
+                  key={`${activity.id}-${index}`}
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: index * 0.1 }}
