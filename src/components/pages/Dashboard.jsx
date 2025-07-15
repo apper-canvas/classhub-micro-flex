@@ -92,17 +92,11 @@ const Dashboard = () => {
     );
   }
 
-  return (
+return (
     <div className="space-y-6">
       <Header 
         title="Dashboard" 
         subtitle="Welcome back! Here's what's happening in your classroom."
-        actions={
-          <Button variant="primary">
-            <ApperIcon name="Plus" size={16} className="mr-2" />
-            Quick Actions
-          </Button>
-        }
       />
 
       <div className="px-6 space-y-6">
