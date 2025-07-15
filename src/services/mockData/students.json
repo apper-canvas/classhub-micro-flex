@@ -1,0 +1,74 @@
+[
+  {
+    "Id": 1,
+    "firstName": "Emma",
+    "lastName": "Johnson",
+    "grade": "10",
+    "email": "emma.johnson@school.edu",
+    "enrollmentDate": "2023-08-15T00:00:00.000Z",
+    "status": "active"
+  },
+  {
+    "Id": 2,
+    "firstName": "Liam",
+    "lastName": "Williams",
+    "grade": "10",
+    "email": "liam.williams@school.edu",
+    "enrollmentDate": "2023-08-15T00:00:00.000Z",
+    "status": "active"
+  },
+  {
+    "Id": 3,
+    "firstName": "Olivia",
+    "lastName": "Brown",
+    "grade": "11",
+    "email": "olivia.brown@school.edu",
+    "enrollmentDate": "2023-08-15T00:00:00.000Z",
+    "status": "active"
+  },
+  {
+    "Id": 4,
+    "firstName": "Noah",
+    "lastName": "Davis",
+    "grade": "10",
+    "email": "noah.davis@school.edu",
+    "enrollmentDate": "2023-08-15T00:00:00.000Z",
+    "status": "active"
+  },
+  {
+    "Id": 5,
+    "firstName": "Sophia",
+    "lastName": "Miller",
+    "grade": "11",
+    "email": "sophia.miller@school.edu",
+    "enrollmentDate": "2023-08-15T00:00:00.000Z",
+    "status": "active"
+  },
+  {
+    "Id": 6,
+    "firstName": "Mason",
+    "lastName": "Wilson",
+    "grade": "10",
+    "email": "mason.wilson@school.edu",
+    "enrollmentDate": "2023-08-15T00:00:00.000Z",
+    "status": "active"
+  },
+  {
+    "Id": 7,
+    "firstName": "Isabella",
+    "lastName": "Moore",
+    "grade": "11",
+    "email": "isabella.moore@school.edu",
+    "enrollmentDate": "2023-08-15T00:00:00.000Z",
+    "status": "active"
+  },
+  {
+    "Id": 8,
+    "firstName": "Lucas",
+    "lastName": "Taylor",
+    "grade": "10",
+    "email": "lucas.taylor@school.edu",
+    "enrollmentDate": "2023-08-15T00:00:00.000Z",
+    "status": "active"
+  }
+]

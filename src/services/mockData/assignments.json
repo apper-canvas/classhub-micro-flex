@@ -1,0 +1,50 @@
+[
+  {
+    "Id": 1,
+    "title": "Math Quiz Chapter 5",
+    "category": "quiz",
+    "totalPoints": 50,
+    "dueDate": "2024-01-15T23:59:59.000Z",
+    "description": "Quiz covering linear equations and graphing"
+  },
+  {
+    "Id": 2,
+    "title": "Science Project: Ecosystem",
+    "category": "project",
+    "totalPoints": 100,
+    "dueDate": "2024-01-20T23:59:59.000Z",
+    "description": "Research project on local ecosystem dynamics"
+  },
+  {
+    "Id": 3,
+    "title": "History Essay: Civil War",
+    "category": "homework",
+    "totalPoints": 75,
+    "dueDate": "2024-01-18T23:59:59.000Z",
+    "description": "5-page essay on causes of the Civil War"
+  },
+  {
+    "Id": 4,
+    "title": "English Midterm Exam",
+    "category": "test",
+    "totalPoints": 150,
+    "dueDate": "2024-01-25T23:59:59.000Z",
+    "description": "Comprehensive exam covering semester material"
+  },
+  {
+    "Id": 5,
+    "title": "Class Participation",
+    "category": "participation",
+    "totalPoints": 25,
+    "dueDate": "2024-01-30T23:59:59.000Z",
+    "description": "Daily participation and engagement"
+  },
+  {
+    "Id": 6,
+    "title": "Extra Credit Research",
+    "category": "extra-credit",
+    "totalPoints": 20,
+    "dueDate": "2024-01-28T23:59:59.000Z",
+    "description": "Optional research assignment for extra credit"
+  }
+]

@@ -1,0 +1,282 @@
+[
+  {
+    "Id": 1,
+    "studentId": 1,
+    "date": "2024-01-08T00:00:00.000Z",
+    "status": "present",
+    "notes": ""
+  },
+  {
+    "Id": 2,
+    "studentId": 1,
+    "date": "2024-01-09T00:00:00.000Z",
+    "status": "present",
+    "notes": ""
+  },
+  {
+    "Id": 3,
+    "studentId": 1,
+    "date": "2024-01-10T00:00:00.000Z",
+    "status": "late",
+    "notes": "Arrived 15 minutes late"
+  },
+  {
+    "Id": 4,
+    "studentId": 1,
+    "date": "2024-01-11T00:00:00.000Z",
+    "status": "present",
+    "notes": ""
+  },
+  {
+    "Id": 5,
+    "studentId": 1,
+    "date": "2024-01-12T00:00:00.000Z",
+    "status": "present",
+    "notes": ""
+  },
+  {
+    "Id": 6,
+    "studentId": 2,
+    "date": "2024-01-08T00:00:00.000Z",
+    "status": "present",
+    "notes": ""
+  },
+  {
+    "Id": 7,
+    "studentId": 2,
+    "date": "2024-01-09T00:00:00.000Z",
+    "status": "absent",
+    "notes": "Sick day"
+  },
+  {
+    "Id": 8,
+    "studentId": 2,
+    "date": "2024-01-10T00:00:00.000Z",
+    "status": "present",
+    "notes": ""
+  },
+  {
+    "Id": 9,
+    "studentId": 2,
+    "date": "2024-01-11T00:00:00.000Z",
+    "status": "present",
+    "notes": ""
+  },
+  {
+    "Id": 10,
+    "studentId": 2,
+    "date": "2024-01-12T00:00:00.000Z",
+    "status": "late",
+    "notes": "Bus delay"
+  },
+  {
+    "Id": 11,
+    "studentId": 3,
+    "date": "2024-01-08T00:00:00.000Z",
+    "status": "present",
+    "notes": ""
+  },
+  {
+    "Id": 12,
+    "studentId": 3,
+    "date": "2024-01-09T00:00:00.000Z",
+    "status": "present",
+    "notes": ""
+  },
+  {
+    "Id": 13,
+    "studentId": 3,
+    "date": "2024-01-10T00:00:00.000Z",
+    "status": "present",
+    "notes": ""
+  },
+  {
+    "Id": 14,
+    "studentId": 3,
+    "date": "2024-01-11T00:00:00.000Z",
+    "status": "excused",
+    "notes": "Doctor appointment"
+  },
+  {
+    "Id": 15,
+    "studentId": 3,
+    "date": "2024-01-12T00:00:00.000Z",
+    "status": "present",
+    "notes": ""
+  },
+  {
+    "Id": 16,
+    "studentId": 4,
+    "date": "2024-01-08T00:00:00.000Z",
+    "status": "present",
+    "notes": ""
+  },
+  {
+    "Id": 17,
+    "studentId": 4,
+    "date": "2024-01-09T00:00:00.000Z",
+    "status": "present",
+    "notes": ""
+  },
+  {
+    "Id": 18,
+    "studentId": 4,
+    "date": "2024-01-10T00:00:00.000Z",
+    "status": "present",
+    "notes": ""
+  },
+  {
+    "Id": 19,
+    "studentId": 4,
+    "date": "2024-01-11T00:00:00.000Z",
+    "status": "present",
+    "notes": ""
+  },
+  {
+    "Id": 20,
+    "studentId": 4,
+    "date": "2024-01-12T00:00:00.000Z",
+    "status": "present",
+    "notes": ""
+  },
+  {
+    "Id": 21,
+    "studentId": 5,
+    "date": "2024-01-08T00:00:00.000Z",
+    "status": "late",
+    "notes": "Family emergency"
+  },
+  {
+    "Id": 22,
+    "studentId": 5,
+    "date": "2024-01-09T00:00:00.000Z",
+    "status": "present",
+    "notes": ""
+  },
+  {
+    "Id": 23,
+    "studentId": 5,
+    "date": "2024-01-10T00:00:00.000Z",
+    "status": "present",
+    "notes": ""
+  },
+  {
+    "Id": 24,
+    "studentId": 5,
+    "date": "2024-01-11T00:00:00.000Z",
+    "status": "present",
+    "notes": ""
+  },
+  {
+    "Id": 25,
+    "studentId": 5,
+    "date": "2024-01-12T00:00:00.000Z",
+    "status": "absent",
+    "notes": "Sick day"
+  },
+  {
+    "Id": 26,
+    "studentId": 6,
+    "date": "2024-01-08T00:00:00.000Z",
+    "status": "present",
+    "notes": ""
+  },
+  {
+    "Id": 27,
+    "studentId": 6,
+    "date": "2024-01-09T00:00:00.000Z",
+    "status": "present",
+    "notes": ""
+  },
+  {
+    "Id": 28,
+    "studentId": 6,
+    "date": "2024-01-10T00:00:00.000Z",
+    "status": "late",
+    "notes": "Overslept"
+  },
+  {
+    "Id": 29,
+    "studentId": 6,
+    "date": "2024-01-11T00:00:00.000Z",
+    "status": "present",
+    "notes": ""
+  },
+  {
+    "Id": 30,
+    "studentId": 6,
+    "date": "2024-01-12T00:00:00.000Z",
+    "status": "present",
+    "notes": ""
+  },
+  {
+    "Id": 31,
+    "studentId": 7,
+    "date": "2024-01-08T00:00:00.000Z",
+    "status": "present",
+    "notes": ""
+  },
+  {
+    "Id": 32,
+    "studentId": 7,
+    "date": "2024-01-09T00:00:00.000Z",
+    "status": "present",
+    "notes": ""
+  },
+  {
+    "Id": 33,
+    "studentId": 7,
+    "date": "2024-01-10T00:00:00.000Z",
+    "status": "present",
+    "notes": ""
+  },
+  {
+    "Id": 34,
+    "studentId": 7,
+    "date": "2024-01-11T00:00:00.000Z",
+    "status": "present",
+    "notes": ""
+  },
+  {
+    "Id": 35,
+    "studentId": 7,
+    "date": "2024-01-12T00:00:00.000Z",
+    "status": "present",
+    "notes": ""
+  },
+  {
+    "Id": 36,
+    "studentId": 8,
+    "date": "2024-01-08T00:00:00.000Z",
+    "status": "absent",
+    "notes": "Family vacation"
+  },
+  {
+    "Id": 37,
+    "studentId": 8,
+    "date": "2024-01-09T00:00:00.000Z",
+    "status": "excused",
+    "notes": "Family vacation"
+  },
+  {
+    "Id": 38,
+    "studentId": 8,
+    "date": "2024-01-10T00:00:00.000Z",
+    "status": "present",
+    "notes": ""
+  },
+  {
+    "Id": 39,
+    "studentId": 8,
+    "date": "2024-01-11T00:00:00.000Z",
+    "status": "present",
+    "notes": ""
+  },
+  {
+    "Id": 40,
+    "studentId": 8,
+    "date": "2024-01-12T00:00:00.000Z",
+    "status": "late",
+    "notes": "Traffic delay"
+  }
+]

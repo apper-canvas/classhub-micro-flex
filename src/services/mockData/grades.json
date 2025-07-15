@@ -1,0 +1,122 @@
+[
+  {
+    "Id": 1,
+    "studentId": 1,
+    "assignmentId": 1,
+    "score": 45,
+    "submittedDate": "2024-01-15T10:30:00.000Z",
+    "comments": "Great work on problem solving"
+  },
+  {
+    "Id": 2,
+    "studentId": 1,
+    "assignmentId": 2,
+    "score": 92,
+    "submittedDate": "2024-01-20T14:20:00.000Z",
+    "comments": "Excellent research and presentation"
+  },
+  {
+    "Id": 3,
+    "studentId": 1,
+    "assignmentId": 3,
+    "score": 88,
+    "submittedDate": "2024-01-18T16:45:00.000Z",
+    "comments": "Well-structured essay with good analysis"
+  },
+  {
+    "Id": 4,
+    "studentId": 2,
+    "assignmentId": 1,
+    "score": 42,
+    "submittedDate": "2024-01-15T11:15:00.000Z",
+    "comments": "Good effort, review linear equations"
+  },
+  {
+    "Id": 5,
+    "studentId": 2,
+    "assignmentId": 2,
+    "score": 85,
+    "submittedDate": "2024-01-20T15:30:00.000Z",
+    "comments": "Creative project with solid research"
+  },
+  {
+    "Id": 6,
+    "studentId": 3,
+    "assignmentId": 1,
+    "score": 48,
+    "submittedDate": "2024-01-15T09:45:00.000Z",
+    "comments": "Excellent understanding of concepts"
+  },
+  {
+    "Id": 7,
+    "studentId": 3,
+    "assignmentId": 3,
+    "score": 82,
+    "submittedDate": "2024-01-18T17:20:00.000Z",
+    "comments": "Good historical analysis"
+  },
+  {
+    "Id": 8,
+    "studentId": 4,
+    "assignmentId": 1,
+    "score": 38,
+    "submittedDate": "2024-01-15T12:00:00.000Z",
+    "comments": "Needs more practice with graphing"
+  },
+  {
+    "Id": 9,
+    "studentId": 4,
+    "assignmentId": 2,
+    "score": 78,
+    "submittedDate": "2024-01-20T13:45:00.000Z",
+    "comments": "Good research, could improve presentation"
+  },
+  {
+    "Id": 10,
+    "studentId": 5,
+    "assignmentId": 1,
+    "score": 46,
+    "submittedDate": "2024-01-15T10:15:00.000Z",
+    "comments": "Strong mathematical reasoning"
+  },
+  {
+    "Id": 11,
+    "studentId": 5,
+    "assignmentId": 3,
+    "score": 90,
+    "submittedDate": "2024-01-18T15:30:00.000Z",
+    "comments": "Outstanding essay with excellent citations"
+  },
+  {
+    "Id": 12,
+    "studentId": 6,
+    "assignmentId": 1,
+    "score": 40,
+    "submittedDate": "2024-01-15T11:30:00.000Z",
+    "comments": "Good attempt, review basic concepts"
+  },
+  {
+    "Id": 13,
+    "studentId": 7,
+    "assignmentId": 1,
+    "score": 47,
+    "submittedDate": "2024-01-15T09:30:00.000Z",
+    "comments": "Excellent work, clear understanding"
+  },
+  {
+    "Id": 14,
+    "studentId": 7,
+    "assignmentId": 2,
+    "score": 95,
+    "submittedDate": "2024-01-20T16:00:00.000Z",
+    "comments": "Outstanding project, very thorough"
+  },
+  {
+    "Id": 15,
+    "studentId": 8,
+    "assignmentId": 1,
+    "score": 35,
+    "submittedDate": "2024-01-15T13:15:00.000Z",
+    "comments": "Needs additional support with concepts"
+  }
+]
